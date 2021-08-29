@@ -4,8 +4,9 @@
   "description": "taxi-server",
   "main": "index.js",
   "scripts": {
+    "dev": "nodemon -L src/index.js"
   },
-  "author": "zhafri",
+  "author": "MZZ",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1"
