@@ -35,7 +35,7 @@ services:
     environment:
       - MONGO_URL=mongodb://db:27017
       - CLIENT=http://localhost:3000
-    command: /usr/app/node_modules/.bin/nodemon -L src/index.js
+    command: npm run dev
 
   db:
     image: mongo:3.6.19-xenial
