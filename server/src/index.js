@@ -4,7 +4,7 @@ const app = express();
 const port = 5000;
 
 app.get("/api/taxis", async (req, res) => {
-  const latitude = req.query?.latitude ?? "1.285194";
+  const latitude = req.query?.latitude ?? "1.285194"; //TODO: Default location should be inside .env
   const longitude = req.query?.longitude ?? "103.8522982";
   const count = req.query?.count ?? 10;
 
@@ -20,5 +20,5 @@ app.get("/api/taxis", async (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
+  console.log(`App listening at http://localhost:${port}`);
 });
