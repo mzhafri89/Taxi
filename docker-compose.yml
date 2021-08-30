@@ -30,26 +30,11 @@ services:
       - mern-network
     volumes:
       - ./server/src:/usr/app/src
-    depends_on:
-      - db
     environment:
       - MONGO_URL=mongodb://db:27017
       - CLIENT=http://localhost:3000
     command: npm run dev
 
-  db:
-    image: mongo:3.6.19-xenial
-    ports:
-      - 27017:27017
-    networks:
-      - mern-network
-    volumes:
-      - mongo-data:/data/db
-
 networks:
   mern-network:
     driver: bridge
-
-volumes:
-  mongo-data:
-    driver: local
