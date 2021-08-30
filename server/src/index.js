@@ -6,10 +6,11 @@ const port = 5000;
 app.get("/api/taxis", async (req, res) => {
   const latitude = req.query?.latitude ?? "1.285194";
   const longitude = req.query?.longitude ?? "103.8522982";
+  const count = req.query?.count ?? 10;
 
   try {
     const response = await fetch(
-      `https://qa-interview-test.splytech.dev/api/drivers?latitude=${latitude}&longitude=${longitude}`
+      `https://qa-interview-test.splytech.dev/api/drivers?latitude=${latitude}&longitude=${longitude}&count=${count}`
     );
     const data = await response.json();
     res.send(data);
